@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Product - Eglanto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .heading-font { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-[#f8f1e9]">
+
+<nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
+        <div class="flex gap-8 text-sm font-medium">
+            <a href="/" class="hover:text-amber-800">Home</a>
+            <a href="/products" class="hover:text-amber-800">Products</a>
+        </div>
+        <h1 class="text-3xl heading-font">Eglanto</h1>
+    </div>
+</nav>
+
+<div class="max-w-2xl mx-auto px-8 py-16">
+    <h1 class="text-5xl heading-font text-center mb-12">Add New Product</h1>
+
+    <form action="/add-product" method="POST" class="bg-white rounded-3xl shadow-xl p-10 space-y-8">
+        <div>
+            <label class="block text-sm font-medium mb-2">Product Name</label>
+            <input type="text" name="name" required
+                   class="w-full border border-gray-300 rounded-2xl px-6 py-4 focus:outline-none focus:border-amber-800">
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+            <div>
+                <label class="block text-sm font-medium mb-2">Price ($)</label>
+                <input type="number" name="price" step="0.01" required
+                       class="w-full border border-gray-300 rounded-2xl px-6 py-4 focus:outline-none focus:border-amber-800">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-2">Category</label>
+                <select name="category" required
+                        class="w-full border border-gray-300 rounded-2xl px-6 py-4 focus:outline-none focus:border-amber-800">
+                    <option value="">Select Category</option>
+                    <option value="Necklace">Necklace</option>
+                    <option value="Ring">Ring</option>
+                    <option value="Earrings">Earrings</option>
+                    <option value="Bracelet">Bracelet</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-2">Description</label>
+            <textarea name="description" rows="4" required
+                      class="w-full border border-gray-300 rounded-3xl px-6 py-4 focus:outline-none focus:border-amber-800"></textarea>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-2">Main Image URL</label>
+            <input type="text" name="image"
+                   placeholder="https://images.pexels.com/photos/13924051/pexels-photo-13924051.jpeg"
+                   class="w-full border border-gray-300 rounded-2xl px-6 py-4 focus:outline-none focus:border-amber-800">
+        </div>
+
+        <button type="submit"
+                class="w-full bg-amber-950 text-white py-6 rounded-3xl text-lg font-medium hover:bg-black transition">
+            Add Product to Database
+        </button>
+    </form>
+
+    <div class="text-center mt-10">
+        <a href="/products" class="text-amber-800 hover:underline">← Back to Products</a>
+    </div>
+</div>
+</body>
+</html>

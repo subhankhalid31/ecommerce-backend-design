@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eglanto • Timeless Elegance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap');
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .handwriting {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.25rem;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body class="bg-[#f8f1e9] text-gray-900">
+
+<!-- Navbar -->
+<nav class="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
+        <div class="flex gap-8 text-sm font-medium">
+            <a href="/" class="hover:text-amber-800">Home</a>
+            <a href="/products" class="hover:text-amber-800">Products</a>
+            <a href="#" class="hover:text-amber-800">Discover</a>
+        </div>
+
+        <h1 class="handwriting text-4xl text-amber-950">Eglanto</h1>
+
+        <!-- Search Bar -->
+        <div class="flex-1 max-w-md mx-8">
+            <form action="/products" method="GET">
+                <div class="relative">
+                    <input type="text" name="search"
+                           class="w-full bg-white border border-gray-300 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-amber-800 placeholder-gray-400"
+                           placeholder="Search jewelry, rings, earrings...">
+                    <button type="submit"
+                            class="absolute right-6 top-1/2 -translate-y-1/2 text-amber-800 hover:text-amber-900">
+                        <i class="fas fa-search text-xl"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="flex gap-6 text-2xl">
+            <button class="hover:text-amber-800 transition"><i class="far fa-heart"></i></button>
+            <button class="hover:text-amber-800 transition"><i class="fas fa-shopping-bag"></i></button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center pt-20"
+         style="background: linear-gradient(to bottom right, #f8f1e9, #f5e8d3);">
+    <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+        <div class="space-y-10">
+            <div class="inline-block bg-white px-6 py-2 rounded-full text-sm tracking-widest border border-amber-200">
+                NEW COLLECTION 2026
+            </div>
+
+            <h1 class="text-7xl md:text-8xl leading-none heading-font font-light tracking-tighter text-amber-950">
+                Desire Meets<br>New Style
+            </h1>
+
+            <p class="text-xl text-gray-600 max-w-lg">
+                Anyone can get dressed up and glamorous, but it is how people dress in their days off that truly reveals their soul.
+            </p>
+
+            <a href="/products"
+               class="inline-block bg-amber-950 text-white px-12 py-5 rounded-2xl font-medium hover:bg-black transition">
+                Shop Collection
+            </a>
+        </div>
+
+        <div class="relative">
+            <img src="https://picsum.photos/id/1011/700/900"
+                 class="rounded-3xl shadow-2xl w-full"
+                 alt="Elegant Jewelry">
+        </div>
+    </div>
+</section>
+
+<!-- Signature Collection -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-8 text-center">
+        <h2 class="text-5xl heading-font mb-6">Signature Collection</h2>
+        <p class="text-xl text-gray-600 mb-12">Discover our handpicked luxury pieces</p>
+
+        <a href="/products"
+           class="inline-block bg-amber-950 hover:bg-black text-white px-12 py-5 rounded-2xl font-medium text-lg transition">
+            Browse All Products →
+        </a>
+    </div>
+</section>
+
+</body>
+</html>

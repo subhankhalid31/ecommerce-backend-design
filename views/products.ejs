@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Eglanto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .heading-font { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-[#f8f1e9]">
+
+<nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
+        <div class="flex gap-8 text-sm font-medium">
+            <a href="/" class="hover:text-amber-800">Home</a>
+            <a href="/products" class="text-amber-800 font-semibold">Products</a>
+        </div>
+        <h1 class="text-3xl heading-font">Eglanto</h1>
+        <div class="flex gap-6 text-xl">
+            <button><i class="fas fa-search"></i></button>
+            <button><i class="far fa-heart"></i></button>
+            <button><i class="fas fa-shopping-bag"></i></button>
+        </div>
+    </div>
+</nav>
+
+<div class="max-w-7xl mx-auto px-8 py-12">
+    <h1 class="text-6xl heading-font text-center mb-4">All Collections</h1>
+
+    <!-- Search Bar -->
+    <form action="/products" method="GET" class="max-w-md mx-auto mb-12">
+        <div class="relative">
+            <input type="text" name="search" value="<%= search || '' %>"
+                   class="w-full bg-white border border-gray-300 rounded-2xl px-6 py-4 focus:outline-none"
+                   placeholder="Search products...">
+            <button type="submit" class="absolute right-4 top-1/2 -translate-y-1/2 text-amber-800">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+        <% products.forEach(product => { %>
+            <a href="/products/<%= product._id %>" class="group">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
+                    <img src="<%= product.image %>" class="w-full h-80 object-cover group-hover:scale-105 transition">
+                </div>
+                <div class="mt-6">
+                    <p class="text-amber-700 text-xs"><%= product.category %></p>
+                    <h3 class="text-xl mt-1"><%= product.name %></h3>
+                    <p class="text-2xl font-light">$<%= product.price %></p>
+                </div>
+            </a>
+        <% }); %>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center gap-4 mt-16">
+        <% if (currentPage > 1) { %>
+            <a href="/products?page=<%= currentPage - 1 %>&search=<%= search %>"
+               class="px-8 py-3 bg-white border rounded-2xl hover:bg-amber-50">← Previous</a>
+        <% } %>
+
+        <span class="px-8 py-3 font-medium">Page <%= currentPage %> of <%= totalPages || 1 %></span>
+
+        <% if (currentPage < totalPages) { %>
+            <a href="/products?page=<%= currentPage + 1 %>&search=<%= search %>"
+               class="px-8 py-3 bg-white border rounded-2xl hover:bg-amber-50">Next →</a>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>

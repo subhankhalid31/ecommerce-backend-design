@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Eglanto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .heading-font { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-[#f8f1e9]">
+
+<nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
+        <h1 class="text-3xl heading-font">Eglanto</h1>
+    </div>
+</nav>
+
+<div class="max-w-md mx-auto px-8 py-20">
+    <h1 class="text-4xl heading-font text-center mb-10">Create Account</h1>
+
+    <form action="/signup" method="POST" class="bg-white rounded-3xl shadow-xl p-10 space-y-6">
+        <div>
+            <label class="block text-sm font-medium mb-2">Username</label>
+            <input type="text" name="username" required
+                   class="w-full border border-gray-300 rounded-2xl px-6 py-4 focus:outline-none focus:border-amber-800">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-2">Password</label>
+            <input type="password" name="password" required
+                   class="w-full border border-gray-300 rounded-2xl px-6 py-4 focus:outline-none focus:border-amber-800">
+        </div>
+
+        <button type="submit"
+                class="w-full bg-amber-950 text-white py-5 rounded-2xl font-medium hover:bg-black transition">
+            Sign Up
+        </button>
+    </form>
+
+    <p class="text-center mt-8 text-gray-600">
+        Already have an account?
+        <a href="/login" class="text-amber-800 hover:underline">Login here</a>
+    </p>
+</div>
+</body>
+</html>
